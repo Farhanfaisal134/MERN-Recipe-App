@@ -5,29 +5,29 @@ import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 
 const AddRecipe = () => {
-   const navigate = useNavigate();
-   const { addRecipe } = useContext(AppContext);
+  const navigate = useNavigate();
+  const { addRecipe } = useContext(AppContext);
 
-   const [formData, setformData] = useState({
-     title:"",
-     ist:"",
-     ing1:"",
-     ing2:"",
-     ing3:"",
-     ing4:"",
-     qty1:"",
-     qty2:"",
-     qty3:"",
-     qty4:"",
-     imgurl:"",
-   });
+  const [formData, setformData] = useState({
+    title: "",
+    ist: "",
+    ing1: "",
+    ing2: "",
+    ing3: "",
+    ing4: "",
+    qty1: "",
+    qty2: "",
+    qty3: "",
+    qty4: "",
+    imgurl: "",
+  });
 
-   const onChangeHandler = (e) =>{
-    const {name ,value} = e.target
-    setformData({...formData,[name]:value})
-   }
+  const onChangeHandler = (e) => {
+    const { name, value } = e.target
+    setformData({ ...formData, [name]: value })
+  }
 
-   const onSubmitHandler = async (e) =>{
+  const onSubmitHandler = async (e) => {
     e.preventDefault()
 
     const {
@@ -74,7 +74,7 @@ const AddRecipe = () => {
     setTimeout(() => {
       navigate("/");
     }, 1500);
-   }
+  }
 
   return (
     <>

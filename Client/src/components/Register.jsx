@@ -5,35 +5,35 @@ import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 
 const Register = () => {
-   const navigate = useNavigate();
-   const { register } = useContext(AppContext);
-   const [name, setname] = useState("");
-   const [gmail, setgmail] = useState("");
-   const [password, setpassword] = useState("");
+  const navigate = useNavigate();
+  const { register } = useContext(AppContext);
+  const [name, setname] = useState("");
+  const [gmail, setgmail] = useState("");
+  const [password, setpassword] = useState("");
 
-   const registerHandler = async (e) => {
-     e.preventDefault();
-     const result = await register(name ,gmail, password);
-    
-     toast.success(result.data.message, {
-       position: "top-right",
-       autoClose: 1000,
-       hideProgressBar: false,
-       closeOnClick: true,
-       pauseOnHover: true,
-       draggable: true,
-       progress: undefined,
-       theme: "dark",
-       transition: Bounce,
-     });
-     console.log(result.data)
-     if (result.data.message !== "User Already exist"){
- setTimeout(() => {
-   navigate("/login");
- }, 1500);
-     }
-      
-   };
+  const registerHandler = async (e) => {
+    e.preventDefault();
+    const result = await register(name, gmail, password);
+
+    toast.success(result.data.message, {
+      position: "top-right",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      transition: Bounce,
+    });
+    console.log(result.data)
+    if (result.data.message !== "User Already exist") {
+      setTimeout(() => {
+        navigate("/login");
+      }, 1500);
+    }
+
+  };
 
   return (
     <>

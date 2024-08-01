@@ -20,13 +20,6 @@ app.use('/api', userRouter)
 // recipeRouter
 app.use('/api', recipeRouter)
 
-// mongoose
-//   .connect(
-//     "mongodb://localhost:27017/",
-//   )
-//   .then(() => console.log("MongoDB is Connected..!"))
-//   .catch((err) => console.log(err.message));
-
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {

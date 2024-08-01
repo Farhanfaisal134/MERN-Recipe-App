@@ -15,7 +15,6 @@ const App = () => {
       <Router>
         <Navbar />
         <Routes>
-
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
@@ -23,7 +22,6 @@ const App = () => {
           <Route path="/saved" element={<Saved />} />
           <Route path="/add" element={<AddRecipe />} />
           <Route path="/:id" element={<Detail />} />
-          
         </Routes>
       </Router>
     </>
